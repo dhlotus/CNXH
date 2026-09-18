@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bài 5 - Ôn tập CNXHKH</title>
+    <link rel="stylesheet" href="css/quiz.css" />
+  </head>
+  <body>
+    <div class="quiz-page">
+      <header class="quiz-title-header">
+        <h1>
+          Bài 5 — Vấn đề dân tộc và tôn giáo trong thời kỳ quá độ lên CNXH
+        </h1>
+        <p class="subtitle">28 câu hỏi trắc nghiệm</p>
+      </header>
+
+      <div class="quiz-body">
+        <div class="quiz-content">
+          <div id="quizContainer"></div>
+        </div>
+
+        <aside class="quiz-actions-sidebar">
+          <button class="summary-btn" id="summaryBtn">
+            📈 Tổng kết kết quả
+          </button>
+        </aside>
+      </div>
+    </div>
+
+    <!-- MODAL KẾT QUẢ -->
+    <div class="modal-overlay" id="resultModal">
+      <div class="modal">
+        <div class="modal-content">
+          <div class="modal-emoji" id="modalEmoji">🎉</div>
+          <h2 id="modalTitle">Kết quả của bạn</h2>
+          <p class="modal-sub" id="modalSub">
+            Cùng xem bạn làm được bao nhiêu nhé!
+          </p>
+
+          <div class="score-circle">
+            <svg viewBox="0 0 160 160">
+              <defs>
+                <linearGradient
+                  id="gradient"
+                  x1="0%"
+                  y1="0%"
+                  x2="100%"
+                  y2="100%"
+                >
+                  <stop offset="0%" stop-color="#6366f1" />
+                  <stop offset="100%" stop-color="#8b5cf6" />
+                </linearGradient>
+              </defs>
+              <circle class="bg-circle" cx="80" cy="80" r="70" />
+              <circle
+                class="progress-circle"
+                cx="80"
+                cy="80"
+                r="70"
+                id="scoreCircle"
+              />
+            </svg>
+            <div class="score-percent">
+              <span class="number" id="scoreNumber">0%</span>
+              <span class="label" id="scoreLabel">0/28 câu</span>
+            </div>
+          </div>
+
+          <div class="score-details">
+            <div class="score-detail-item correct">
+              <div class="value" id="modalCorrect">0</div>
+              <div class="label">Đúng</div>
+            </div>
+            <div class="score-detail-item wrong">
+              <div class="value" id="modalWrong">0</div>
+              <div class="label">Sai</div>
+            </div>
+            <div class="score-detail-item total">
+              <div class="value" id="modalTotal">0</div>
+              <div class="label">Tổng</div>
+            </div>
+          </div>
+
+          <div class="modal-actions">
+            <a href="index.html" class="modal-btn secondary">🏠 Trang chủ</a>
+            <button class="modal-btn primary" onclick="location.reload()">
+              🔄 Làm lại
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/bai5-data.js"></script>
+    <script src="js/quiz-engine.js"></script>
+  </body>
+</html>
