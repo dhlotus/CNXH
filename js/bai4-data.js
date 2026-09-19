@@ -110,7 +110,7 @@ window.QUIZ_DATA = [
     id: 10,
     text: "Cơ cấu xã hội - giai cấp ở Việt Nam thời kỳ quá độ lên chủ nghĩa xã hội bao gồm mấy giai cấp, tầng lớp?",
     options: ["4", "3", "6", "5"],
-    correct: [3],
+    correct: [0],
   },
   {
     id: 11,
@@ -198,7 +198,7 @@ window.QUIZ_DATA = [
       "Giai cấp công nhân với giai cấp nông dân và tầng lớp tiểu tư sản",
       "Giai cấp công nhân với giai cấp nông dân và tầng lớp trí thức",
     ],
-    correct: [3],
+    correct: [0],
   },
   {
     id: 19,
@@ -215,7 +215,7 @@ window.QUIZ_DATA = [
     id: 20,
     text: "Hiện nay ở Việt Nam, lực lượng xã hội đặc biệt được Đảng ta chủ trương xây dựng thành một đội ngũ vững mạnh là:",
     options: ["Thanh niên", "Công nhân", "Doanh nhân", "Trí thức"],
-    correct: [3],
+    correct: [2],
   },
   {
     id: 21,
