@@ -47,7 +47,7 @@ window.QUIZ_DATA = [
       "Chủ nghĩa duy vật biện chứng",
       "Học thuyết về sứ mệnh lịch sử toàn thế giới của giai cấp công nhân",
     ],
-    correct: [0],
+    correct: [3],
   },
   {
     id: 5,
@@ -181,7 +181,7 @@ window.QUIZ_DATA = [
       "Chính trị - xã hội",
       "Giai cấp – xã hội",
     ],
-    correct: [3],
+    correct: [2],
   },
   {
     id: 17,
@@ -192,7 +192,7 @@ window.QUIZ_DATA = [
       "Hiệu quả lao động thấp",
       "Tâm lý tiểu nông",
     ],
-    correct: [3],
+    correct: [1],
   },
   {
     id: 18,
@@ -203,7 +203,7 @@ window.QUIZ_DATA = [
       "Xây dựng giai cấp công nhân tăng về số lượng và chất lượng",
       "Coi trọng và giữ vững bản chất giai cấp công nhân và nguyên tắc sinh hoạt Đảng",
     ],
-    correct: [2],
+    correct: [1],
   },
   {
     id: 19,
@@ -214,7 +214,7 @@ window.QUIZ_DATA = [
       "Phát triển giai cấp công nhân cả về số lượng và chất lượng",
       "Xây dựng khối liên minh công – nông",
     ],
-    correct: [2],
+    correct: [1],
   },
   {
     id: 20,

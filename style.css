@@ -1,6 +1,6 @@
 /* ============================================================
    STYLE.CSS — Giao diện trang chủ (index.html)
-   Tách riêng với css/quiz.css (giao diện trang làm bài)
+   Bản nâng cấp UI/UX cao cấp (Premium & Mobile-first)
    ============================================================ */
 
 * {
@@ -8,6 +8,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family:
+    "Inter",
     "Segoe UI",
     system-ui,
     -apple-system,
@@ -15,25 +16,27 @@
 }
 
 :root {
-  --primary: #6366f1;
-  --primary-dark: #4f46e5;
-  --primary-light: #eef2ff;
-  --primary-glow: rgba(99, 102, 241, 0.35);
-  --accent: #8b5cf6;
-  --bg: #f5f6fb;
-  --bg-gradient: linear-gradient(135deg, #f5f6fb 0%, #eef2ff 100%);
-  --card: #ffffff;
-  --text: #1e293b;
-  --text-muted: #64748b;
-  --border: #e5e7eb;
-  --shadow: 0 4px 20px rgba(15, 23, 42, 0.06);
-  --shadow-lg: 0 12px 32px rgba(99, 102, 241, 0.15);
-  --radius: 18px;
+  --primary: #4f46e5;
+  --primary-dark: #3730a3;
+  --primary-light: #e0e7ff;
+  --primary-glow: rgba(79, 70, 229, 0.4);
+  --accent: #7c3aed;
+  --accent-glow: rgba(124, 58, 237, 0.3);
+  --bg-color: #f8fafc;
+  --card-bg: rgba(255, 255, 255, 0.75);
+  --text: #0f172a;
+  --text-muted: #475569;
+  --border: rgba(255, 255, 255, 0.6);
+  --shadow-sm: 0 4px 15px rgba(0, 0, 0, 0.03);
+  --shadow-md: 0 10px 30px rgba(79, 70, 229, 0.08);
+  --shadow-hover: 0 20px 40px rgba(124, 58, 237, 0.15);
+  --radius: 20px;
 }
 
 body {
-  background: var(--bg-gradient);
-  background-attachment: fixed;
+  background: #f8fafc;
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
   color: var(--text);
   min-height: 100vh;
   line-height: 1.65;
@@ -41,10 +44,22 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 /* Scrollbar */
 ::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
 }
 ::-webkit-scrollbar-track {
   background: transparent;
@@ -52,92 +67,121 @@ body {
 ::-webkit-scrollbar-thumb {
   background: linear-gradient(180deg, var(--primary), var(--accent));
   border-radius: 99px;
-  border: 2px solid var(--bg);
 }
 
 /* ===== TRANG CHỦ ===== */
 .home-container {
-  max-width: 1150px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 50px 24px;
+  padding: 60px 24px;
 }
 
 .home-header {
   text-align: center;
-  margin-bottom: 55px;
-  animation: fadeInDown 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+  margin-bottom: 60px;
+  animation: fadeInDown 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .home-header h1 {
-  font-size: clamp(1.7rem, 4.5vw, 2.6rem);
+  font-size: clamp(2rem, 5vw, 3rem);
   font-weight: 800;
-  background: linear-gradient(135deg, var(--primary-dark), var(--accent));
+  background: linear-gradient(135deg, var(--primary), var(--accent));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  margin-bottom: 12px;
-  letter-spacing: -0.5px;
+  margin-bottom: 16px;
+  letter-spacing: -0.8px;
+  line-height: 1.2;
 }
 
 .home-header p {
   color: var(--text-muted);
-  font-size: 1.08rem;
+  font-size: 1.15rem;
+  font-weight: 500;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 /* Grid các bài */
 .lesson-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 28px;
 }
 
 .lesson-card {
-  background: var(--card);
+  background: var(--card-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 28px 24px;
+  padding: 32px 28px;
   text-decoration: none;
   color: var(--text);
-  box-shadow: var(--shadow);
-  border: 1.5px solid transparent;
-  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  min-height: 140px;
+  min-height: 160px;
+  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Hiệu ứng trễ từng thẻ */
+.lesson-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.lesson-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.lesson-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.lesson-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.lesson-card:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.lesson-card:nth-child(6) {
+  animation-delay: 0.6s;
 }
 
 .lesson-card::before {
   content: "";
   position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, var(--primary-light), transparent);
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
   opacity: 0;
-  transition: opacity 0.35s;
-  pointer-events: none;
+  transition: opacity 0.4s ease;
 }
 
 .lesson-card::after {
   content: "→";
   position: absolute;
-  bottom: 20px;
-  right: 24px;
-  font-size: 1.4rem;
+  bottom: 28px;
+  right: 28px;
+  font-size: 1.5rem;
   color: var(--primary);
   opacity: 0;
-  transform: translateX(-10px);
-  transition: all 0.35s;
+  transform: translateX(-15px);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .lesson-card:hover {
-  transform: translateY(-8px) scale(1.01);
-  box-shadow: var(--shadow-lg);
-  border-color: var(--primary);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: var(--shadow-hover);
+  background: #ffffff;
 }
 
 .lesson-card:hover::before {
   opacity: 1;
 }
+
 .lesson-card:hover::after {
   opacity: 1;
   transform: translateX(0);
@@ -148,48 +192,53 @@ body {
   font-size: 0.75rem;
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 1.2px;
+  letter-spacing: 1.5px;
   color: #fff;
   background: linear-gradient(135deg, var(--primary), var(--accent));
-  padding: 4px 12px;
+  padding: 6px 14px;
   border-radius: 99px;
-  margin-bottom: 14px;
-  position: relative;
-  z-index: 1;
+  margin-bottom: 18px;
   align-self: flex-start;
+  box-shadow: 0 4px 10px var(--primary-glow);
 }
 
 .lesson-title {
-  font-size: 1.15rem;
+  font-size: 1.25rem;
   font-weight: 700;
-  margin-bottom: 14px;
-  position: relative;
-  z-index: 1;
+  margin-bottom: 16px;
   line-height: 1.4;
   flex: 1;
+  color: var(--text);
 }
 
 .lesson-info {
-  font-size: 0.88rem;
+  font-size: 0.95rem;
   color: var(--text-muted);
-  position: relative;
-  z-index: 1;
   font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.lesson-info::before {
+  content: "📝";
+  font-size: 1.1rem;
 }
 
 /* Footer */
 .home-footer {
   text-align: center;
-  margin-top: 70px;
+  margin-top: 80px;
   color: var(--text-muted);
-  font-size: 0.88rem;
+  font-size: 0.9rem;
+  font-weight: 500;
 }
 
-/* Animation */
+/* Animations */
 @keyframes fadeInDown {
   from {
     opacity: 0;
-    transform: translateY(-24px);
+    transform: translateY(-30px);
   }
   to {
     opacity: 1;
@@ -197,25 +246,48 @@ body {
   }
 }
 
-/* Responsive */
-@media (max-width: 600px) {
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive (Mobile First Focus) */
+@media (max-width: 768px) {
   .home-container {
-    padding: 28px 16px;
+    padding: 40px 20px;
   }
-  .home-header {
-    margin-bottom: 36px;
-  }
-  .home-header h1 {
-    font-size: 1.5rem;
-  }
+
   .lesson-grid {
-    gap: 16px;
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
+}
+
+@media (max-width: 480px) {
+  .home-header {
+    margin-bottom: 40px;
+  }
+
+  .home-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .home-header p {
+    font-size: 1rem;
+  }
+
   .lesson-card {
-    padding: 22px 20px;
-    min-height: 120px;
+    padding: 24px;
+    min-height: 140px;
   }
+
   .lesson-title {
-    font-size: 1.05rem;
+    font-size: 1.15rem;
   }
 }

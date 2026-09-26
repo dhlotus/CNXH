@@ -47,7 +47,7 @@ window.QUIZ_DATA = [
       "Nền dân chủ chủ nô, nền dân chủ tư sản, nền dân chủ xã hội chủ nghĩa",
       "Nền dân chủ nguyên thủy, nền dân chủ chủ nô, nền dân chủ phong kiến, nền dân chủ tư sản, nền dân chủ vô sản",
     ],
-    correct: [3],
+    correct: [2],
   },
   {
     id: 5,
